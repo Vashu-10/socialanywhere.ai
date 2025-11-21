@@ -1,0 +1,135 @@
+/* New global design tokens inspired by Strapi (light default) */
+:root {
+/* Strapi-like Brand Scale (indigo/purple) */
+  --brand-50:#eef2ff; --brand-100:#e0e7ff; --brand-200:#c7d2fe; --brand-300:#a5b4fc; --brand-400:#818cf8;
+  --brand-500:#6366f1; --brand-600:#4f46e5; --brand-700:#4338ca; --brand-800:#3730a3; --brand-900:#312e81;
+
+  /* Core surfaces */
+  --bg: #f8fafc; /* very light neutral for app background */
+  --bg-muted: #f1f5f9; /* subtle elevated surface */
+  --surface: #ffffff; /* card surface */
+  --border: #e6edf3; /* soft border */
+  --text: #0b1724; /* primary text */
+  --text-muted: #475569; /* darker muted text for better contrast */
+  --text-light: #64748b; /* lighter muted text */
+
+  /* Primary mapping for components */
+  --primary: var(--brand-600);
+  --primary-foreground: #ffffff;
+
+  /* States */
+  --success: #16a34a; --warning: #f59e0b; --danger: #ef4444; --info: #0ea5e9;
+
+  /* Typography */
+  --font-sans: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  --fs-xs:12px; --fs-sm:14px; --fs-md:16px; --fs-lg:20px; --fs-xl:24px; --fs-2xl:30px; --fs-3xl:36px;
+  --leading-tight:1.25; --leading-snug:1.35; --leading-normal:1.5;
+
+  /* Spacing & radii */
+  --space-1:4px; --space-2:8px; --space-3:12px; --space-4:16px; --space-5:20px; --space-6:24px; --space-8:32px;
+  --radius-sm:6px; --radius-md:8px; --radius-lg:12px; --radius-xl:16px;
+
+  /* Shadows - subtle strata like Strapi */
+  --shadow-xs: 0 1px 2px rgba(11,23,36,0.04);
+  --shadow-sm: 0 6px 18px rgba(11,23,36,0.06);
+  --shadow-md: 0 12px 36px rgba(11,23,36,0.08);
+  --shadow-lg: 0 24px 60px rgba(11,23,36,0.12);
+
+  /* Focus ring */
+  --ring: 0 0 0 4px rgba(99,102,241,0.08);
+
+  /* transitions */
+  --transition-fast:0.12s ease; --transition-normal:0.18s ease; --transition-slow:0.3s ease;
+}
+
+/* Dark theme tokens */
+[data-theme="dark"] {
+  --bg: #0b1020;
+  --bg-muted: #0f172a;
+  --surface: #0f172a;
+  --border: #1f2937;
+  --text: #e5e7eb;
+  --text-muted: #94a3b8;
+}
+
+/* Utility base styles */
+html, body, #root { height: 100%; }
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Focus visible for keyboard users */
+:focus { outline: none; }
+:focus-visible { box-shadow: var(--ring); border-radius: 6px; }
+
+/* Page container */
+.container-max { max-width: 1400px; margin-left: auto; margin-right: auto; padding-left: 1.5rem; padding-right: 1.5rem; }
+
+/* Card primitive */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-xs);
+  padding: 1.25rem;
+}
+
+/* Page header */
+.page-header { display:flex; align-items:flex-start; justify-content:space-between; gap:1rem; }
+.page-title { font-size:var(--fs-lg); font-weight:600; line-height:var(--leading-snug); color:var(--text); }
+.page-desc { font-size:var(--fs-sm); color:var(--text-muted); }
+
+/* Sidebar overrides to guarantee visibility */
+.app-sidebar {
+  background: var(--surface);
+}
+.app-sidebar a {
+  color: var(--text) !important;
+}
+.app-sidebar svg {
+  color: var(--text) !important;
+}
+.app-sidebar .active {
+  color: var(--brand-700) !important;
+}
+
+/* Ensure reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+}
+
+/* Ensure images have dimensions by default for CLS avoidance */
+img { display: block; max-width: 100%; height: auto; }
+
+/* Light mode text contrast utilities */
+.text-contrast {
+  color: var(--text) !important;
+}
+.text-muted-contrast {
+  color: var(--text-muted) !important;
+}
+.text-light-contrast {
+  color: var(--text-light) !important;
+}
+.bg-surface-contrast {
+  background-color: var(--surface);
+  color: var(--text);
+}
+.modal-content {
+  background-color: var(--surface);
+  color: var(--text);
+}
+.modal-content input, .modal-content textarea {
+  background-color: var(--bg);
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+.modal-content input::placeholder, .modal-content textarea::placeholder {
+  color: var(--text-muted);
+}
+
+/* End of globals.css */
