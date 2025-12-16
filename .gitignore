@@ -1,0 +1,133 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Dependencies
+node_modules
+dist
+dist-ssr
+*.local
+
+# Environment variables and secrets
+.env
+.env.*
+token.json
+Credentials.json
+*.key
+*.pem
+*.p12
+secrets/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# Generated content and uploads
+server/public/
+server/static/
+uploads/
+generated_images/
+user_uploads/
+
+# Generated AI content
+server/public/generated_*
+server/public/placeholder_*
+server/public/chatgpt_*
+server/public/nanobanana_*
+server/public/stability_*
+server/public/piapi_*
+server/public/custom_*
+server/public/idea_generator/
+
+# Docker
+.dockerignore
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# OS generated files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.swp
+*.swo
+*~
+
+# Coverage reports
+htmlcov/
+.coverage
+.coverage.*
+coverage.xml
+*.cover
+.hypothesis/
+.pytest_cache/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# pyenv
+.python-version
+
+# Social media specific
+reddit_scheduled_posts.json
+*.json.bak
+
+# Additional cache and temporary files
+.cache/
+temp/
+tmp/
+debug/
+error.log
+access.log
+backup/
+credentials/
+keys/
+database/
